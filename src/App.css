@@ -119,3 +119,10 @@ header {
 .list-footer {
   margin-top: 8px;
 }
+.add-list {
+  min-width: 250px;
+  width: 250px;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #e2e4e6;
+}
