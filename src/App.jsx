@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import { Card } from "./components/Card";
+//import { Sidebar } from "./SideBar";
 
 function App() {
   const [value, setValue] = useState("");
@@ -14,26 +15,28 @@ function App() {
       </header>
 
       <div className="main-container">
-        {titles.map((title) => (
-          <Card title={title} key={title} />
-        ))}
-
-        <div className="add-list">
+        <div className="add-list-container">
           <input
-            className="input-todo"
+            className="input-list"
             type="text"
             onChange={onChange}
             value={value}
+            placeholder="new List Name"
           />
           <button
-            className="input-button"
+            className="add-list-button"
             onClick={() => {
               setTitles([...titles, value]);
+              setValue("");
             }}
           >
-            カードを追加
+            リストを追加
           </button>
         </div>
+
+        {titles.map((title) => (
+          <Card title={title} key={title} />
+        ))}
       </div>
     </>
   );
